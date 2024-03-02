@@ -1,14 +1,21 @@
 {
-    "builds": [
-      {
-        "src": "mysite/wsgi.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "mysite/wsgi.py"
-      }
-    ]
+  "builds": [
+    {
+      "src": "mysite/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "mysite/wsgi.py"
+    }
+  ],
+  "env": {
+    "PGDATABASE": "verceldb",
+    "PGUSER": "default",
+    "PGPASSWORD": "EgS2Gz1rPLpo",
+    "PGHOST": "ep-autumn-lake-a4egr8bi-pooler.us-east-1.aws.neon.tech",
+    "PGPORT": "5432"
+  }
 }
