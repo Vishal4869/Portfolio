@@ -98,7 +98,6 @@ DATABASES = {
     }
 }
 
-psql "postgres://default:EgS2Gz1rPLpo@ep-autumn-lake-a4egr8bi.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
 
 
 # Password validation
