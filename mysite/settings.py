@@ -81,11 +81,22 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    # 'default': {
+    #     # 'ENGINE': 'django.db.backends.sqlite3',
+    #     # 'NAME': BASE_DIR / 'db.sqlite3', 
+    # }
+
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('PGDATABASE', 'verceldb'),
+        'USER': os.environ.get('PGUSER', 'default'),
+        'PASSWORD': os.environ.get('PGPASSWORD', 'EgS2Gz1rPLpo'),
+        'HOST': os.environ.get('PGHOST', 'ep-autumn-lake-a4egr8bi-pooler.us-east-1.aws.neon.tech'),
+        'PORT': os.environ.get('PGPORT', '5432'),
     }
 }
+
+psql "postgres://default:EgS2Gz1rPLpo@ep-autumn-lake-a4egr8bi.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
 
 
 # Password validation
